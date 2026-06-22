@@ -10,7 +10,7 @@ import tkinter as tk
 import socket
 from pathlib import Path
 
-CONFIG_PATH = Path(os.getenv('APPDATA', '~')) / 'SmartPaste' / 'config.json'
+CONFIG_PATH = Path(os.getenv('APPDATA', '~')) / 'CopyPasteBasedEmojiRemover' / 'config.json'
 _history = []
 _stack = []
 _is_processing = False
@@ -163,10 +163,10 @@ def create_tray():
             os._exit(0)
 
         menu = pystray.Menu(
-            pystray.MenuItem(" Paste", lambda: None, default=True),
+            pystray.MenuItem(" CopyPasteBasedEmojiRemover", lambda: None, default=True),
             pystray.MenuItem("Quit", on_quit)
         )
-        icon = pystray.Icon("pasre", icon_image, "Paste", menu)
+        icon = pystray.Icon("pasre", icon_image, "CopyPasteBasedEmojiRemover", menu)
         icon.run()
     except ImportError:
         pass
@@ -176,11 +176,11 @@ if __name__ == "__main__":
         lock_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         lock_socket.bind(('127.0.0.1', 49152))
     except OSError:
-        print("Another instance of Paste is already running.")
+        print("Another instance of CopyPasteBasedEmojiRemover is already running.")
         sys.exit(1)
 
     print("=" * 50)
-    print(" Paste Prototype")
+    print(" CopyPasteBasedEmojiRemover Prototype")
     print(f"Config: {CONFIG_PATH}")
     print("\nHotkeys:")
     print("  Ctrl+V          → Remove emojis and paste, or flush & transform stack")
