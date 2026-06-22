@@ -73,20 +73,6 @@ Default configuration:
 | -------- | ----------------------- |
 | Ctrl + V | Remove emojis and paste |
 
-## Example
-
-Input:
-
-```text
-Hello  World 
-```
-
-Output:
-
-```text
-Hello  World
-```
-
 ## Notes
 
 * Works only with text currently stored in the clipboard.
