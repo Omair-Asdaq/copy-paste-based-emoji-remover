@@ -163,10 +163,10 @@ def create_tray():
             os._exit(0)
 
         menu = pystray.Menu(
-            pystray.MenuItem(" Smart Paste", lambda: None, default=True),
+            pystray.MenuItem(" Paste", lambda: None, default=True),
             pystray.MenuItem("Quit", on_quit)
         )
-        icon = pystray.Icon("smart_paste", icon_image, "Smart Paste", menu)
+        icon = pystray.Icon("pasre", icon_image, "Paste", menu)
         icon.run()
     except ImportError:
         pass
@@ -176,11 +176,11 @@ if __name__ == "__main__":
         lock_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         lock_socket.bind(('127.0.0.1', 49152))
     except OSError:
-        print("Another instance of Smart Paste is already running.")
+        print("Another instance of Paste is already running.")
         sys.exit(1)
 
     print("=" * 50)
-    print("Smart Paste Prototype")
+    print(" Paste Prototype")
     print(f"Config: {CONFIG_PATH}")
     print("\nHotkeys:")
     print("  Ctrl+V          → Remove emojis and paste, or flush & transform stack")
