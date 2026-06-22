@@ -2,3 +2,4 @@ keyboard
 pyperclip
 pystray
 Pillow
+tkinter
